@@ -1,5 +1,0 @@
-click
-pydantic
-ruamel.yaml
-requests
-openshift

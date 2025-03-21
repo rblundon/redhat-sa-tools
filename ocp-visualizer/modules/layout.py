@@ -8,8 +8,8 @@ import os
 from PIL import Image, ImageDraw
 from typing import Tuple
 
-from config import *
-from functions import mm_to_pixels, add_text_box, add_rotated_text, add_image_box, add_horizontal_line
+from modules.config import *
+from modules.functions import mm_to_pixels, add_text_box, add_rotated_text, add_image_box, add_horizontal_line
 
 def generate_reference_image(input_path, output_path, node_counts=None, cluster_name=None, version=None, platform=None, support=None, worker_total_cpu=None, variant="?"):
     """Generate a reference image with the specified parameters."""
