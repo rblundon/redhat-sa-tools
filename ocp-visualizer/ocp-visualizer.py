@@ -16,11 +16,15 @@ import math
 from difflib import SequenceMatcher
 from collections import defaultdict
 from airium import Airium # pip install airium
+import subprocess
 
 home_directory = os.path.expanduser("~")
 output_dir = "CustomerDocs"
 css_file = "ocp-stylesheet.css"
 openshift_logo = "ocp-logo.png"
+
+# Activate the virtual environment
+subprocess.call(['source', os.path.join(home_directory, 'redhat-sa-tools', 'bin', 'activate')], shell=True)
 
 def setup_logging(verbosity):
     """Sets up logging based on the verbosity flag."""
