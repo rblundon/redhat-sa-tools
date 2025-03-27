@@ -1,6 +1,17 @@
 # redhat-sa-tools
+A set of tools to quickly vlisualize OpenShift cluster data. 
 
-## Setting Up the Virtual Environment
+## Table of Contents
+- [Installation](#installation)
+- [Tools](#Tools)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [Contributors](#contributors)
+- [License](#license)
+
+## Installation
+
+### Setting Up the Virtual Environment
 
 To set up the virtual environment, follow these steps:
 
@@ -26,30 +37,27 @@ To set up the virtual environment, follow these steps:
 5. Install the required packages:
 
    ```bash
-   pip install -r /path/to/your/repo/ocp-visualizer/requirements.txt
+   pip install -r </path/to/your/repo>/ocp-visualizer/requirements.txt
    ```
+## Tools
 
-## Running the Script
+- [OpenShift Cluster Visualizer](ocp-visualizer/README.md)
 
-To execute the script from the command line, use the following steps:
+### Roadmap
+List of enhancements/new products planned for the Red Hat SA Toolkit.
 
-1. Ensure the virtual environment is activated:
+- Specify output directory (flag or prompt)
+- Direct SQL query
+- Google docs integration
 
-   ```bash
-   source ~/redhat-sa-tools/bin/activate
-   ```
+### Contributing
+We welcome pull requests from the community! 
+<!-- Please read our contribution guidelines before submitting your pull request. -->
 
-2. Navigate to the directory containing the script:
+### Contributors
+Thank you to all who have contributed to this project! Your name will be added to the list when your PR has been approved.
 
-   ```bash
-   cd /path/to/your/repo/ocp-visualizer
-   ```
+- Ryan Blundon, Sr. Solutions Architect
 
-3. Run the script with the required arguments:
-
-   ```bash
-   python ocp-visualizer.py -f <input_file_path> [--counts] [-d | -v]
-   ```
-   - Replace `<input_file_path>` with the path to your input CSV file.
-   - Use `--counts` to display node counts.
-   - Use `-d` for debug logging or `-v` for verbose logging.
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
