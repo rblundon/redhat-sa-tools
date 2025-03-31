@@ -32,13 +32,11 @@ output_dir = "rblundon@redhat.com - Google Drive/My Drive/CustomerDocs"
 css_file = os.path.join(CSS_DIR, "ocp-stylesheet.css")
 openshift_logo = os.path.join(SCRIPT_DIR, "reference", "images", "ocp-logo.png")
 
-# Activate the virtual environment
-subprocess.call(['source', os.path.join(home_directory, 'redhat-sa-tools', 'bin', 'activate')], shell=True)
-
 def ensure_reference_dirs():
     """Ensure reference directories exist."""
     os.makedirs(FONTS_DIR, exist_ok=True)
     os.makedirs(IMAGES_DIR, exist_ok=True)
+    os.makedirs(CSS_DIR, exist_ok=True)
 
 def main():
     """Main entry point for the script."""

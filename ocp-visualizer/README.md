@@ -1,5 +1,6 @@
 # redhat-sa-tools
-A set of tools to quickly vlisualize OpenShift cluster data. 
+
+A set of tools to quickly vlisualize OpenShift cluster data.
 
 ## Table of Contents
 
@@ -46,7 +47,8 @@ To execute the script from the command line, use the following steps:
    - Use `--html` to to create one html file per cluster.
    - Use `-d` for debug logging or `-v` for verbose logging.
 
-* Note output directory is currently hard coded on Line 31 of ocp-visualizer.py
+\* Note output directory is currently hard coded on Line 31 of ocp-visualizer.py
 
 ## License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
