@@ -25,7 +25,7 @@ LINE_COLOR = 'white'
 
 # Font settings
 DEFAULT_FONT = os.path.join(FONTS_DIR, 'RedHatText-Regular.otf')
-BOLD_FONT = os.path.join(FONTS_DIR, 'RedHatText-Bold.otf')  # Using Bold font instead of Regular
+BOLD_FONT = os.path.join(FONTS_DIR, 'RedHatText-Bold.otf')
 TITLE_FONT_SIZE_MM = 5
 ROTATED_TEXT_FONT_SIZE_MM = 8
 BOX_TEXT_FONT_SIZE_MM = 5
@@ -43,7 +43,3 @@ LINE_WIDTH_PX = 2
 HORIZONTAL_LINE_START_X_MM = 0
 HORIZONTAL_LINE_END_X_MM = 20
 HORIZONTAL_LINE_Y_POSITIONS_MM = [40, 60]
-
-# File paths
-OUTPUT_FILE = 'reference.png'
-EVAL_IMAGE_PATH = os.path.join(IMAGES_DIR, 'eval.png') 

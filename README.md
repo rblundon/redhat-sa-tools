@@ -1,9 +1,11 @@
 # redhat-sa-tools
-A set of tools to quickly vlisualize OpenShift cluster data. 
+
+A set of tools to quickly vlisualize OpenShift cluster data.
 
 ## Table of Contents
+
 - [Installation](#installation)
-- [Tools](#Tools)
+- [Tools](#tools)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [Contributors](#contributors)
@@ -37,13 +39,15 @@ To set up the virtual environment, follow these steps:
 5. Install the required packages:
 
    ```bash
-   pip install -r </path/to/your/repo>/ocp-visualizer/requirements.txt
+   pip install -r </path/to/your/repo>/requirements.txt
    ```
+
 ## Tools
 
 - [OpenShift Cluster Visualizer](ocp-visualizer/README.md)
 
 ### Roadmap
+
 List of enhancements/new products planned for the Red Hat SA Toolkit.
 
 - Specify output directory (flag or prompt)
@@ -51,13 +55,17 @@ List of enhancements/new products planned for the Red Hat SA Toolkit.
 - Google docs integration
 
 ### Contributing
-We welcome pull requests from the community! 
+
+We welcome pull requests from the community!
+
 <!-- Please read our contribution guidelines before submitting your pull request. -->
 
 ### Contributors
+
 Thank you to all who have contributed to this project! Your name will be added to the list when your PR has been approved.
 
 - Ryan Blundon, Sr. Solutions Architect
 
 ## License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

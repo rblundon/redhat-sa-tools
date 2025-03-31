@@ -44,8 +44,7 @@ def read_cluster_csv_file(file_path):
                     "Last Seen": row["Last Seen"],
                     "Associates": row["Associates"] if row["Associates"] else None,
                     "Desired Version": row["Desired Version"],
-                    "Install Date": row["Install Date"],
-                    "UPI": row["upi"] == "ⓘ"  # Check for the UPI indicator
+                    "Install Date": row["Install Date"]
                 }
                 
                 # Check for 'Variant' key
