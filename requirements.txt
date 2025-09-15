@@ -1,2 +1,5 @@
 airium
 Pillow
+trino
+trino[sqlalchemy]
+click

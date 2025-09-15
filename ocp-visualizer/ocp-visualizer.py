@@ -125,7 +125,8 @@ def main():
             support = cluster_info.get('Support', 'Unknown')
             variant = cluster_info.get('Variant', '?')  # Use the 'Variant' value from the cluster data
             
-            success = generate_reference_image(args.image_input, image_output, node_counts, cluster_name, cluster_version, 
+            #success = generate_reference_image(args.image_input, image_output, node_counts, cluster_name, cluster_version, 
+            success = generate_reference_image(image_output, node_counts, cluster_name, cluster_version, 
                                             platform=platform, support=support, worker_total_cpu=worker_total_cpu,
                                             variant=variant)
             if not success:

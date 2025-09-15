@@ -38,6 +38,7 @@ def main(debug, ebs_account, username):
     2. Establish database connection
     3. Query account information
     4. Display and confirm account details
+    5. Retrieve and display associated clusters
     """
     setup_logging(debug)
     logger = get_logger('MAIN')
@@ -64,12 +65,13 @@ def main(debug, ebs_account, username):
     try:
         # Verify account name
         with db_manager.get_connection() as connection:
-            query = text("""
+            # First, verify the account
+            account_query = text("""
                 SELECT distinct(account_name)
                 FROM ccx_sensitive.cluster_accounts 
                 WHERE ebs_account = :account_id
             """)
-            result = connection.execute(query, {"account_id": ebs_account})
+            result = connection.execute(account_query, {"account_id": ebs_account})
             
             # Get the account name, filtering out None values
             account_names = [row.account_name for row in result if row.account_name is not None]
@@ -85,6 +87,24 @@ def main(debug, ebs_account, username):
                 sys.exit(0)
                 
             logger.info("Account verified successfully")
+
+            # Now get the list of clusters
+            cluster_query = text("""
+                SELECT distinct(cluster_id)
+                FROM ccx_sensitive.cluster_accounts 
+                WHERE ebs_account = :account_id
+            """)
+            cluster_result = connection.execute(cluster_query, {"account_id": ebs_account})
+            
+            # Get the cluster IDs
+            cluster_ids = [row.cluster_id for row in cluster_result]
+            
+            if not cluster_ids:
+                logger.warning(f"No clusters found for EBS account: {ebs_account}")
+            else:
+                print(f"\nFound {len(cluster_ids)} cluster(s):")
+                for cluster_id in cluster_ids:
+                    print(f"  - {cluster_id}")
 
     except Exception as e:
         logger.error(f"Error executing query: {e}")
