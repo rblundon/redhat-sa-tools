@@ -92,26 +92,11 @@ def process_cluster_data(cluster_file):
     return node_info
 
 def process_node_data(node_info, node_type):
-    """Processes node data for a specific node type with improved role matching."""
+    """Processes node data for a specific node type."""
     nodes = {}
-    
     for node_name, data in node_info.items():
-        node_roles = data.get('Node Role', '').lower()
-        
-        # More precise role matching to avoid cross-contamination
-        if node_type.lower() == "master":
-            # Master nodes: look for control-plane or master roles
-            if any(role in node_roles for role in ['control-plane', 'master']):
-                nodes[node_name] = data
-        elif node_type.lower() == "infra":
-            # Infrastructure nodes: look for infra role specifically
-            if 'infra' in node_roles:
-                nodes[node_name] = data
-        elif node_type.lower() == "worker":
-            # Worker nodes: must have worker role but NOT infra role
-            if 'worker' in node_roles and 'infra' not in node_roles:
-                nodes[node_name] = data
-    
+        if node_type.lower() in data.get('Node Role', '').lower():
+            nodes[node_name] = data
     return nodes
 
 def get_cluster_name(node_names):
